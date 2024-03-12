@@ -1,10 +1,7 @@
 import { Tabs } from "@contentstack/venus-components";
-import React, { useEffect } from "react";
+import React from "react";
 import MenuCard from "./MenuCard";
-import { getEntry } from "../../api";
-import { CONTENT_TYPES } from "../../constants";
 import { useDispatch, useSelector } from "react-redux";
-import { setBreakfastData, setDinnerData, setLunchData } from "../../reducer";
 
 const Menu: React.FC = () => {
   const dispatch = useDispatch();
@@ -13,21 +10,6 @@ const Menu: React.FC = () => {
   );
   const lunchData: any = useSelector((state: any) => state.main.lunchData);
   const dinnerData: any = useSelector((state: any) => state.main.dinnerData);
-  useEffect(() => {
-    getEntry(CONTENT_TYPES.BREAKFAST).then((data: any) => {
-      dispatch(setBreakfastData(data[0]));
-    });
-  }, []);
-  useEffect(() => {
-    getEntry(CONTENT_TYPES.LUNCH).then((data: any) => {
-      dispatch(setLunchData(data[0]));
-    });
-  }, []);
-  useEffect(() => {
-    getEntry(CONTENT_TYPES.DINNER).then((data: any) => {
-      dispatch(setDinnerData(data[0]));
-    });
-  }, []);
   return (
     <div className="menu-page">
       <Tabs

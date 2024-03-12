@@ -1,21 +1,12 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setHeaderData } from "../reducer/index";
-import { getEntry } from "../api";
+import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { CONTENT_TYPES } from "../constants";
 import { Heading } from "@contentstack/venus-components";
 
 const Header: React.FC = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const headerData: any = useSelector((state: any) => state.main.headerData);
   const { title } = headerData;
-  useEffect(() => {
-    getEntry(CONTENT_TYPES.HEADER).then((data) => {
-      dispatch(setHeaderData(data[0][0]));
-    });
-  }, []);
   return (
     <div className="header">
       <div className="logo">
