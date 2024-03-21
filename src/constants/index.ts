@@ -4,4 +4,5 @@ export const CONTENT_TYPES = {
   BREAKFAST: "breakfast",
   LUNCH: "lunch",
   DINNER: "dinner",
+  PAGE: "page",
 };

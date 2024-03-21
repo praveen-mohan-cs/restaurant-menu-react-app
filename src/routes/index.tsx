@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Home from "../components/Home";
 import Menu from "../components/menu/Menu";
-import { getEntry } from "../api";
+import { getEntry, getEntryByUrl } from "../api";
 import { CONTENT_TYPES } from "../constants";
 import { useDispatch } from "react-redux";
 import {
@@ -13,6 +13,7 @@ import {
   setFooterData,
   setHeaderData,
   setLunchData,
+  setHomePageData,
 } from "../reducer";
 import LoadingScreen from "../components/LoadingScreen";
 
@@ -27,6 +28,16 @@ const AppRoutes: React.FC = () => {
     const data = await getEntry(CONTENT_TYPES.FOOTER);
     dispatch(setFooterData(data[0][0]));
   };
+  const fetchHomePageData = async () => {
+    const data: any = await getEntryByUrl({
+      contentTypeUid: CONTENT_TYPES.PAGE,
+      entryUrl: "/",
+      referenceFieldPath: undefined,
+      jsonRtePath: undefined,
+    });
+    dispatch(setHomePageData(data[0]));
+  };
+
   const fetchBreakfastData = async () => {
     const data = await getEntry(CONTENT_TYPES.BREAKFAST);
     dispatch(setBreakfastData(data[0]));
@@ -45,6 +56,7 @@ const AppRoutes: React.FC = () => {
         await Promise.all([
           fetchHeaderData(),
           fetchFooterData(),
+          fetchHomePageData(),
           fetchBreakfastData(),
           fetchLunchData(),
           fetchDinnerData(),
