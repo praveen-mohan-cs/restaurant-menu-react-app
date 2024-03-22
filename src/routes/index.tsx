@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -8,27 +8,28 @@ import { getEntry, getEntryByUrl } from "../api";
 import { CONTENT_TYPES } from "../constants";
 import { useDispatch } from "react-redux";
 import {
-  setBreakfastData,
-  setDinnerData,
   setFooterData,
   setHeaderData,
-  setLunchData,
   setHomePageData,
+  setMenuPageData,
 } from "../reducer";
 import LoadingScreen from "../components/LoadingScreen";
 
 const AppRoutes: React.FC = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
-  const fetchHeaderData = async () => {
+
+  const fetchHeaderData = useCallback(async () => {
     const data = await getEntry(CONTENT_TYPES.HEADER);
     dispatch(setHeaderData(data[0][0]));
-  };
-  const fetchFooterData = async () => {
+  }, [dispatch]);
+
+  const fetchFooterData = useCallback(async () => {
     const data = await getEntry(CONTENT_TYPES.FOOTER);
     dispatch(setFooterData(data[0][0]));
-  };
-  const fetchHomePageData = async () => {
+  }, [dispatch]);
+
+  const fetchHomePageData = useCallback(async () => {
     const data: any = await getEntryByUrl({
       contentTypeUid: CONTENT_TYPES.PAGE,
       entryUrl: "/",
@@ -36,20 +37,18 @@ const AppRoutes: React.FC = () => {
       jsonRtePath: undefined,
     });
     dispatch(setHomePageData(data[0]));
-  };
+  }, [dispatch]);
 
-  const fetchBreakfastData = async () => {
-    const data = await getEntry(CONTENT_TYPES.BREAKFAST);
-    dispatch(setBreakfastData(data[0]));
-  };
-  const fetchLunchData = async () => {
-    const data = await getEntry(CONTENT_TYPES.LUNCH);
-    dispatch(setLunchData(data[0]));
-  };
-  const fetchDinnerData = async () => {
-    const data = await getEntry(CONTENT_TYPES.DINNER);
-    dispatch(setDinnerData(data[0]));
-  };
+  const fetchMenuPageData = useCallback(async () => {
+    const data: any = await getEntryByUrl({
+      contentTypeUid: CONTENT_TYPES.PAGE,
+      entryUrl: "/menu",
+      referenceFieldPath: ["sections.menu.course.dishes"],
+      jsonRtePath: undefined,
+    });
+    dispatch(setMenuPageData(data[0].sections[0].menu.course));
+  }, [dispatch]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -57,9 +56,7 @@ const AppRoutes: React.FC = () => {
           fetchHeaderData(),
           fetchFooterData(),
           fetchHomePageData(),
-          fetchBreakfastData(),
-          fetchLunchData(),
-          fetchDinnerData(),
+          fetchMenuPageData(),
         ]);
 
         setLoading(false);
@@ -69,7 +66,7 @@ const AppRoutes: React.FC = () => {
     };
 
     fetchData();
-  }, []);
+  }, [fetchFooterData, fetchHeaderData, fetchHomePageData, fetchMenuPageData]);
   return (
     <Router>
       <div className="app">
