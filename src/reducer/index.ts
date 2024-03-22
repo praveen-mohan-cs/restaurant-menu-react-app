@@ -4,18 +4,14 @@ interface CounterState {
   headerData: any;
   footerData: any;
   homePageData: any;
-  breakfastData: any;
-  lunchData: any;
-  dinnerData: any;
+  menuPageData: any;
 }
 
 const initialState: CounterState = {
   headerData: {},
   footerData: {},
   homePageData: {},
-  breakfastData: [],
-  lunchData: [],
-  dinnerData: [],
+  menuPageData: {},
 };
 
 const mainSlice = createSlice({
@@ -31,14 +27,8 @@ const mainSlice = createSlice({
     setHomePageData: (state, action: PayloadAction<number>) => {
       state.homePageData = action.payload;
     },
-    setBreakfastData: (state, action: PayloadAction<number>) => {
-      state.breakfastData = action.payload;
-    },
-    setLunchData: (state, action: PayloadAction<number>) => {
-      state.lunchData = action.payload;
-    },
-    setDinnerData: (state, action: PayloadAction<number>) => {
-      state.dinnerData = action.payload;
+    setMenuPageData: (state, action: PayloadAction<number>) => {
+      state.menuPageData = action.payload;
     },
   },
 });
@@ -47,9 +37,7 @@ export const {
   setHeaderData,
   setFooterData,
   setHomePageData,
-  setBreakfastData,
-  setLunchData,
-  setDinnerData,
+  setMenuPageData,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;
