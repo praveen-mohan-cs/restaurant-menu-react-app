@@ -7,6 +7,7 @@ const MenuCard: React.FC<{ data: any }> = ({ data }) => {
       {data ? (
         data.map((menuItem: any) => (
           <AssetCardVertical
+            key={menuItem.uid}
             assetType="image"
             assetUrl={menuItem.image.url}
             title={menuItem.title}
