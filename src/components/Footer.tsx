@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Heading } from "@contentstack/venus-components";
+import { RootState } from "../store";
 
 const Footer: React.FC = () => {
-  const footerData: any = useSelector((state: any) => state.main.footerData);
+  const footerData = useSelector((state: RootState) => state.main.footerData);
   const { copyright } = footerData;
   return (
     <div className="footer">
