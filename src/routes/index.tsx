@@ -14,6 +14,7 @@ import {
   setMenuPageData,
 } from "../reducer";
 import LoadingScreen from "../components/LoadingScreen";
+import { NotFound } from "../components/NotFound";
 
 const AppRoutes: React.FC = () => {
   const dispatch = useDispatch();
@@ -39,15 +40,15 @@ const AppRoutes: React.FC = () => {
     dispatch(setHomePageData(data[0]));
   }, [dispatch]);
 
-  const fetchMenuPageData = useCallback(async () => {
-    const data: any = await getEntryByUrl({
-      contentTypeUid: CONTENT_TYPES.PAGE,
-      entryUrl: "/menu",
-      referenceFieldPath: ["sections.menu.course.dishes"],
-      jsonRtePath: undefined,
-    });
-    dispatch(setMenuPageData(data[0].sections[0].menu.course));
-  }, [dispatch]);
+  // const fetchMenuPageData = useCallback(async () => {
+  //   const data: any = await getEntryByUrl({
+  //     contentTypeUid: CONTENT_TYPES.PAGE,
+  //     entryUrl: "/menu",
+  //     referenceFieldPath: ["sections.menu.course.dishes"],
+  //     jsonRtePath: undefined,
+  //   });
+  //   dispatch(setMenuPageData(data[0].sections[0].menu.course));
+  // }, [dispatch]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,7 +57,7 @@ const AppRoutes: React.FC = () => {
           fetchHeaderData(),
           fetchFooterData(),
           fetchHomePageData(),
-          fetchMenuPageData(),
+          // fetchMenuPageData(),
         ]);
 
         setLoading(false);
@@ -66,7 +67,8 @@ const AppRoutes: React.FC = () => {
     };
 
     fetchData();
-  }, [fetchFooterData, fetchHeaderData, fetchHomePageData, fetchMenuPageData]);
+    // Add fetchMenuPageData to the below dependency array when using it
+  }, [fetchFooterData, fetchHeaderData, fetchHomePageData]);
   return (
     <Router>
       <div className="app">
@@ -78,22 +80,8 @@ const AppRoutes: React.FC = () => {
             <div className="body">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/menu" element={<Menu />} />
-                <Route
-                  path="*"
-                  element={
-                    <h2
-                      style={{
-                        display: "flex",
-                        width: "100%",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      404! Page not found
-                    </h2>
-                  }
-                />
+                <Route path="/menu" element={<NotFound />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
             <Footer />
