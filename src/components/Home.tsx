@@ -2,10 +2,11 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
 const Home: React.FC = () => {
-  const homePageData: any = useSelector(
-    (state: any) => state.main.homePageData
+  const homePageData = useSelector(
+    (state: RootState) => state.main.homePageData
   );
   const { home_banner } = homePageData.sections[0];
   return (
