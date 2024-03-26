@@ -1,8 +1,13 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { useSelector } from "react-redux";
 
 const Home: React.FC = () => {
+  const homePageData: any = useSelector(
+    (state: any) => state.main.homePageData
+  );
+  const { home_banner } = homePageData.sections[0];
   return (
     <div className="home-page">
       <Carousel
@@ -13,10 +18,10 @@ const Home: React.FC = () => {
         infiniteLoop={true}
       >
         <div>
-          <img src="https://images.contentstack.io/v3/assets/blt6f19dec108148cb9/blt9a28b03671452955/65e9dd2428294d1673f2187a/youtube-banner-8077450_1280.jpg" />
+          <img alt="home-page-banner-1" src={home_banner.banner[0].url} />
         </div>
         <div>
-          <img src="https://images.contentstack.io/v3/assets/blt6f19dec108148cb9/blt9a28b03671452955/65e9dd2428294d1673f2187a/youtube-banner-8077450_1280.jpg" />
+          <img alt="home-page-banner-2" src={home_banner.banner[0].url} />
         </div>
       </Carousel>
     </div>

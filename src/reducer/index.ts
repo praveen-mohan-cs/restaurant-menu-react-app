@@ -3,17 +3,15 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface CounterState {
   headerData: any;
   footerData: any;
-  breakfastData: any;
-  lunchData: any;
-  dinnerData: any;
+  homePageData: any;
+  menuPageData: any;
 }
 
 const initialState: CounterState = {
   headerData: {},
   footerData: {},
-  breakfastData: [],
-  lunchData: [],
-  dinnerData: [],
+  homePageData: {},
+  menuPageData: {},
 };
 
 const mainSlice = createSlice({
@@ -26,14 +24,11 @@ const mainSlice = createSlice({
     setFooterData: (state, action: PayloadAction<number>) => {
       state.footerData = action.payload;
     },
-    setBreakfastData: (state, action: PayloadAction<number>) => {
-      state.breakfastData = action.payload;
+    setHomePageData: (state, action: PayloadAction<number>) => {
+      state.homePageData = action.payload;
     },
-    setLunchData: (state, action: PayloadAction<number>) => {
-      state.lunchData = action.payload;
-    },
-    setDinnerData: (state, action: PayloadAction<number>) => {
-      state.dinnerData = action.payload;
+    setMenuPageData: (state, action: PayloadAction<number>) => {
+      state.menuPageData = action.payload;
     },
   },
 });
@@ -41,9 +36,8 @@ const mainSlice = createSlice({
 export const {
   setHeaderData,
   setFooterData,
-  setBreakfastData,
-  setLunchData,
-  setDinnerData,
+  setHomePageData,
+  setMenuPageData,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;
