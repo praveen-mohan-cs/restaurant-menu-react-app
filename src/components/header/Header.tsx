@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { Heading } from "@contentstack/venus-components";
-import { RootState } from "../store";
-import { TLink } from "../types";
+import { RootState } from "../../store";
+import { TLink } from "../../types";
 
 const Header: React.FC = () => {
   const headerData = useSelector((state: RootState) => state.main.headerData);

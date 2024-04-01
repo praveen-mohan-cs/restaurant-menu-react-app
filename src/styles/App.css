@@ -67,4 +67,28 @@
     padding-top: 70px;
     min-height: calc(100vh - 70px);
   }
+
+  /* Loading animation placeholder styles */
+  .loading-placeholder {
+    display: inline-block;
+    width: 180px;
+    height: 180px;
+    background-color: #f5f5f5;
+    animation: loading 1s infinite;
+    margin-left: 20px;
+    border-radius: 8px;
+  }
+
+  /* Header placeholder styles */
+  .header-placeholder {
+    background-color: #f5f5f5;
+    padding: 20px;
+    height: 1.875rem;
+    border-radius: 8px;
+  }
+
+  /* Container for loading animation placeholders */
+  .loading-placeholder-container {
+    padding-top: 10px;
+  }
 }
