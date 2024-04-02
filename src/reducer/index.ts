@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // COMMENT: Add TMenu in below import statement
 import { TFooterData, THeaderData, THomePageData } from "../types";
 
-interface CounterState {
+interface AppState {
   headerData: THeaderData;
   footerData: TFooterData;
   homePageData: THomePageData;
@@ -10,7 +10,7 @@ interface CounterState {
   // menuPageData: TMenu[];
 }
 
-const initialState: CounterState = {
+const initialState: AppState = {
   headerData: {
     website_title: "",
     logo: {
