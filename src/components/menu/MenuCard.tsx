@@ -1,12 +1,15 @@
 import { AssetCardVertical } from "@contentstack/venus-components";
 import React from "react";
-import { TDishes } from "../../types";
+// COMMENT: Uncomment below import statement
+// import { TDishes } from "../../types";
 
-const MenuCard: React.FC<{ data: TDishes[] }> = ({ data }) => {
+// COMMENT: Replace any[] with TDishes[]
+const MenuCard: React.FC<{ data: any[] }> = ({ data }) => {
   return (
     <div className="menu-card">
       {data ? (
-        data.map((menuItem: TDishes) => (
+        // COMMENT: Replace any with TDishes
+        data.map((menuItem: any) => (
           <AssetCardVertical
             key={menuItem.uid}
             assetType="image"

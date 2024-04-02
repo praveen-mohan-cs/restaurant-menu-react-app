@@ -25,20 +25,22 @@ export type THomePageData = {
   }[];
 };
 
-export type TDishes = {
-  uid: string;
-  image: {
-    url: string;
-  };
-  title: string;
-};
-
-export type TMenu = {
-  course_name: string;
-  dishes: TDishes[];
-};
-
 export type TLink = {
   href: string;
   title: string;
 };
+
+// COMMENT: Uncomment below lines
+
+// export type TDishes = {
+//   uid: string;
+//   image: {
+//     url: string;
+//   };
+//   title: string;
+// };
+
+// export type TMenu = {
+//   course_name: string;
+//   dishes: TDishes[];
+// };

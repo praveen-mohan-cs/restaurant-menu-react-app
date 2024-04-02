@@ -3,40 +3,46 @@ import React, { useEffect, useState } from "react";
 import MenuCard from "./MenuCard";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { TMenu } from "../../types";
-import { fetchMenuPageData } from "../../api";
 import { LoadingSkeleton } from "../LoadingSkeleton";
+// COMMENT: Uncomment below 2 import statements
+// import { TMenu } from "../../types";
+// import { fetchMenuPageData } from "../../api";
 
 const Menu: React.FC = () => {
-  const dispatch = useDispatch();
-  const [loading, setLoading] = useState(true);
-  const menuPageData = useSelector(
-    (state: RootState) => state.main.menuPageData
-  );
+  // COMMENT: Uncomment from line 14 to 42
 
-  useEffect(() => {
-    fetchMenuPageData(dispatch, setLoading);
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // const [loading, setLoading] = useState(true);
+  // const menuPageData = useSelector(
+  //   (state: RootState) => state.main.menuPageData
+  // );
 
-  const tabData = menuPageData?.map((course: TMenu, index: number) => ({
-    componentData: <MenuCard data={course.dishes} />,
-    id: `index-${index}`,
-    title: course.course_name,
-  }));
+  // useEffect(() => {
+  //   fetchMenuPageData(dispatch, setLoading);
+  // }, [dispatch]);
 
-  return (
-    <div className="menu-page">
-      {loading ? (
-        <LoadingSkeleton />
-      ) : (
-        <>
-          {tabData && (
-            <Tabs shouldHaveBorder={true} tabInfo={tabData} version="v1" />
-          )}
-        </>
-      )}
-    </div>
-  );
+  // const tabData = menuPageData?.map((course: TMenu, index: number) => ({
+  //   componentData: <MenuCard data={course.dishes} />,
+  //   id: `index-${index}`,
+  //   title: course.course_name,
+  // }));
+
+  // return (
+  //   <div className="menu-page">
+  //     {loading ? (
+  //       <LoadingSkeleton />
+  //     ) : (
+  //       <>
+  //         {tabData && (
+  //           <Tabs shouldHaveBorder={true} tabInfo={tabData} version="v1" />
+  //         )}
+  //       </>
+  //     )}
+  //   </div>
+  // );
+
+  // COMMENT: Delete below line
+  return <></>;
 };
 
 export default Menu;
