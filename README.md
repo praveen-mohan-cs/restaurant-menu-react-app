@@ -30,6 +30,7 @@ This is a React starter app that integrates with Contentstack's Content Delivery
    REACT_APP_CONTENTSTACK_API_KEY=YOUR_STACK_API_KEY
    REACT_APP_CONTENTSTACK_DELIVERY_TOKEN=YOUR_DELIVERY_TOKEN
    REACT_APP_CONTENTSTACK_ENVIRONMENT=YOUR_ENVIRONMENT
+   REACT_APP_CONTENTSTACK_REGION=YOUR_STACK_REGION
    ```
 
 5. Run the development server:
@@ -41,7 +42,15 @@ This is a React starter app that integrates with Contentstack's Content Delivery
 
 To configure the app with your Contentstack account:
 
-- Replace `YOUR_STACK_API_KEY`, `YOUR_DELIVERY_TOKEN`, and `YOUR_ENVIRONMENT` in the `.env` file with your Contentstack API key, delivery token, and environment name, respectively.
+- Replace `YOUR_STACK_API_KEY`, `YOUR_DELIVERY_TOKEN`, `YOUR_ENVIRONMENT` and `YOUR_STACK_REGION` in the `.env` file with your Contentstack API key, delivery token, environment name and region respectively.
+
+**Supported Regions:**
+
+- **North America:** `US`
+- **Europe:** `EU`
+- **Azure North America:** `AZURE_NA`
+- **Azure Europe:** `AZURE_EU`
+- **GCP North America:** `GCP_NA`
 
 ## Usage
 
