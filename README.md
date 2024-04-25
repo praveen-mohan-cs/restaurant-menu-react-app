@@ -46,8 +46,8 @@ To configure the app with your Contentstack account:
 
 **Supported Regions:**
 
-- **North America:** `US`
-- **Europe:** `EU`
+- **AWS North America:** `US`
+- **AWS Europe:** `EU`
 - **Azure North America:** `AZURE_NA`
 - **Azure Europe:** `AZURE_EU`
 - **GCP North America:** `GCP_NA`
