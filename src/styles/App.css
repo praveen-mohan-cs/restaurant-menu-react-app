@@ -333,11 +333,13 @@
     .hero-content h1 {
       font-size: 40px;
       line-height: 50px;
+      text-align: center;
     }
 
     .hero-content p {
       font-size: 16px;
       line-height: 24px;
+      text-align: center;
     }
     .cta-button {
       margin: auto;
@@ -352,10 +354,12 @@
 
     .footer-info h3 {
       align-self: center;
+      text-align: center;
     }
 
     .footer-title {
       align-self: center;
+      text-align: center;
     }
   }
 }
