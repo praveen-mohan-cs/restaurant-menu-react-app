@@ -101,7 +101,7 @@
   .hero-content {
     flex: 1;
     max-width: 50%;
-    padding-left: 15px;
+    padding-left: 35px;
   }
 
   .hero-content h1 {
@@ -109,7 +109,7 @@
     font-family: "Cormorant Garamond";
     font-size: 100px;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 100;
     line-height: 100px;
   }
 
@@ -118,7 +118,7 @@
     font-family: "Inter";
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 30px;
     padding: 15px 0;
   }
@@ -145,7 +145,7 @@
     font-family: "Cormorant Garamond";
     font-size: 20px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 300;
     line-height: 32px;
   }
 
@@ -156,7 +156,7 @@
   .menu-page {
     background-color: white;
     width: 100%;
-    padding: 20px;
+    padding-top: 100px;
   }
 
   .menu-page .menu-card {
@@ -167,10 +167,10 @@
 
   .footer {
     display: flex;
-    padding: 72px 80px 40px 80px;
+    padding: 45px 80px 40px 45px;
     flex-direction: column;
     align-items: center;
-    gap: 120px;
+    gap: 20px 60px;
     align-self: stretch;
     background: #222;
     color: #fbf8f4;
@@ -178,7 +178,6 @@
 
   .footer-content {
     display: flex;
-    padding-top: 16px;
     justify-content: space-between;
     align-items: flex-start;
     align-self: stretch;
@@ -234,7 +233,7 @@
     font-family: "Cormorant Garamond";
     font-size: 74.118px;
     font-style: italic;
-    font-weight: 700;
+    font-weight: 400;
     line-height: normal;
   }
 
