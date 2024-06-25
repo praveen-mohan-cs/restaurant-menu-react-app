@@ -16,7 +16,6 @@ const Menu: React.FC = () => {
   const menuPageData = useSelector(
     (state: RootState) => state.main.menuPageData
   );
-
   useEffect(() => {
     fetchMenuPageData(dispatch, setLoading);
   }, [dispatch]);
@@ -33,9 +32,10 @@ const Menu: React.FC = () => {
         <LoadingSkeleton />
       ) : (
         <>
-          {tabData && (
+          <div className="menu-heading">Discover our Dining Menu</div>
+          {/* {tabData && (
             <Tabs shouldHaveBorder={true} tabInfo={tabData} version="v1" />
-          )}
+          )} */}
         </>
       )}
     </div>
