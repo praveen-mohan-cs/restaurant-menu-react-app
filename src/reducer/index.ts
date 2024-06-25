@@ -26,17 +26,36 @@ const initialState: AppState = {
     },
   },
   footerData: {
+    title: "",
+    navigation_links: {
+      title: "",
+      link: [
+        {
+          href: "",
+          title: "",
+        },
+      ],
+    },
+    information_section: {
+      title: "",
+      descrption: "",
+      timings: "",
+      holiday: "",
+    },
     copyright: "",
   },
   homePageData: {
     sections: [
       {
-        home_banner: {
-          banner: [
-            {
+        home: {
+          hero_section: {
+            banner: {
               url: "",
             },
-          ],
+            heading: "",
+            description: "",
+            primary_cta: "",
+          },
         },
       },
     ],

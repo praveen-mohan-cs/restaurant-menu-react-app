@@ -1,30 +1,39 @@
 import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { Heading, Button } from "@contentstack/venus-components";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
   const homePageData = useSelector(
     (state: RootState) => state.main.homePageData
   );
-  const { home_banner } = homePageData.sections[0];
+  const navigate = useNavigate();
+
+  const { home } = homePageData.sections[0];
+
   return (
     <div className="home-page">
-      <Carousel
-        showIndicators={false}
-        showThumbs={false}
-        showStatus={false}
-        autoPlay={true}
-        infiniteLoop={true}
-      >
-        <div>
-          <img alt="home-page-banner-1" src={home_banner.banner[0].url} />
+      <div className="hero-section">
+        {home.hero_section?.banner?.url && (
+          <div className="hero-banner">
+            <img src={home.hero_section.banner.url} alt="Hero Banner" />
+          </div>
+        )}
+        <div className="hero-content">
+          <Heading text={home.hero_section?.heading} tagName="h1" />
+          <p>{home.hero_section?.description}</p>
+          <Button
+            size="large"
+            className="cta-button"
+            onClick={() => {
+              navigate(home.hero_section?.primary_cta ?? "");
+            }}
+          >
+            View Our Menu
+          </Button>
         </div>
-        <div>
-          <img alt="home-page-banner-2" src={home_banner.banner[0].url} />
-        </div>
-      </Carousel>
+      </div>
     </div>
   );
 };

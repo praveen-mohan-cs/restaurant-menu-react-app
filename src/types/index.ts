@@ -12,15 +12,34 @@ export type THeaderData = {
 };
 
 export type TFooterData = {
-  copyright: string;
+  title: string;
+
+  navigation_links?: {
+    title?: string;
+    link?: TLink[];
+  };
+
+  information_section?: {
+    title?: string;
+    descrption?: string;
+    timings?: string;
+    holiday?: string;
+  };
+
+  copyright?: string;
 };
 
 export type THomePageData = {
   sections: {
-    home_banner: {
-      banner: {
-        url: string;
-      }[];
+    home: {
+      hero_section?: {
+        banner?: {
+          url: string;
+        };
+        heading?: string;
+        description?: string;
+        primary_cta?: string;
+      };
     };
   }[];
 };
