@@ -71,6 +71,7 @@ const initialState: AppState = {
             url: "",
           },
           title: "",
+          description: "",
         },
       ],
     },

@@ -74,6 +74,7 @@
     flex-direction: column;
     padding-top: 70px;
     width: 100%;
+    background-color: #fbf8f4;
   }
 
   .hero-section {
@@ -82,7 +83,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    background-color: #f8f8f8;
     width: 100%;
   }
 
@@ -154,9 +154,43 @@
   }
 
   .menu-page {
-    background-color: white;
+    background-color: #fbf8f4;
     width: 100%;
-    padding-top: 100px;
+    padding-top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    align-self: stretch;
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    align-self: stretch;
+  }
+  .category {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 72px;
+  }
+
+  .category p {
+    color: #241d32;
+    cursor: pointer;
+    /* Body 2 */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px; /* 150% */
+  }
+  .category p.active {
+    color: #3822aa;
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 
   .menu-page .menu-card {
@@ -274,10 +308,24 @@
 
     /* Heading 2 */
     font-family: "Cormorant Garamond";
-    font-size: 50px;
+    font-size: 40px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 88px; /* 110% */
+    font-weight: 200;
+    line-height: 60px; /* 110% */
+  }
+
+  .menu-heading .line1,
+  .menu-heading .line2 {
+    display: block;
+  }
+
+  .card-section {
+    display: flex;
+    padding: 0px 80px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
   }
 
   .body {

@@ -57,6 +57,7 @@ export type TDishes = {
     url: string;
   };
   title: string;
+  description: string;
 };
 
 export type TMenu = {
