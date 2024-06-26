@@ -20,7 +20,9 @@ export type TFooterData = {
   };
 
   information_section?: {
-    title?: string;
+    logo?: {
+      url?: string;
+    };
     descrption?: string;
     timings?: string;
     holiday?: string;
@@ -58,6 +60,7 @@ export type TDishes = {
   };
   title: string;
   description: string;
+  price: number;
 };
 
 export type TMenu = {

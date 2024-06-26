@@ -37,7 +37,9 @@ const initialState: AppState = {
       ],
     },
     information_section: {
-      title: "",
+      logo: {
+        url: "",
+      },
       descrption: "",
       timings: "",
       holiday: "",
@@ -72,6 +74,7 @@ const initialState: AppState = {
           },
           title: "",
           description: "",
+          price: 0,
         },
       ],
     },

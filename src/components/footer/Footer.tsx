@@ -26,11 +26,7 @@ const Footer: React.FC = () => {
         )}
         {information_section && (
           <div className="footer-info">
-            <Heading
-              className="footer-title"
-              text={information_section?.title}
-              tagName="h4"
-            />
+            <img src={information_section.logo?.url} alt="" />
 
             <p>{information_section?.descrption}</p>
             <Heading text="Hours" tagName="h3" />

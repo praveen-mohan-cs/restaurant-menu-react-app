@@ -26,8 +26,6 @@
   }
 
   .logo-menu img {
-    width: 70px;
-    height: 70px;
     margin-right: 10px;
   }
 
@@ -162,41 +160,46 @@
     align-items: flex-start;
     gap: 48px;
     align-self: stretch;
+    margin-bottom: 40px;
   }
 
   .categories {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 64px;
-    align-self: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust gap as needed */
+    width: 100%;
+    padding: 20px; /* Optional: Add some padding around the container */
+    box-sizing: border-box;
   }
+
   .category {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 72px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust gap as needed */
+    width: 100%;
   }
 
   .category p {
+    flex: 1 1 calc(33.33% - 40px); /* 3 items per row on large screens */
+    max-width: 200px; /* Prevent the category from growing too large */
+    min-width: 100px; /* Ensures categories don’t become too small */
+    flex-grow: 1;
     color: #241d32;
     cursor: pointer;
-    /* Body 2 */
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
     line-height: 24px; /* 150% */
+    text-align: center; /* Optional: Center-align text */
   }
+
   .category p.active {
     color: #3822aa;
     text-decoration: underline;
     text-underline-offset: 4px;
-  }
-
-  .menu-page .menu-card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 
   .footer {
@@ -262,21 +265,18 @@
     line-height: 24px;
   }
 
-  .footer-title {
-    color: #3822aa;
-    font-family: "Cormorant Garamond";
-    font-size: 74.118px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: normal;
-  }
-
   .footer-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
     color: #fbf8f4;
+  }
+
+  .footer-info img {
+    width: auto;
+    height: auto;
+    padding-bottom: 10px;
   }
 
   .footer-info p {
@@ -321,11 +321,76 @@
 
   .card-section {
     display: flex;
-    padding: 0px 80px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust gap as needed */
+    width: 100%;
+  }
+
+  .menu-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust gap as needed */
+    width: 100%;
+  }
+
+  .menu-card-item {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-    align-self: stretch;
+    align-items: center;
+    flex-basis: calc(33.33% - 20px); /* Allows three cards per row */
+    max-width: 400px; /* Prevents card from growing too large */
+    min-width: 280px; /* Ensures cards don’t become too small */
+    flex-grow: 1; /* Makes sure cards take up available space */
+  }
+
+  .item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    gap: 20px;
+    border: 1px solid rgba(38, 29, 50, 0.2);
+    background: #fbf8f4;
+  }
+
+  .item-content-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .price {
+    color: #241d32;
+    text-align: right;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+  }
+
+  .item-content-text p {
+    color: #715cdd;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+
+  .description {
+    color: #241d32;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    flex: 1;
   }
 
   .body {
@@ -354,6 +419,15 @@
 
   .loading-placeholder-container {
     padding-top: 10px;
+  }
+
+  @media (max-width: 1200px) {
+    .menu-card-item {
+      flex-basis: calc(50% - 20px); /* 2 items per row */
+    }
+    .category p {
+      flex: 1 1 calc(50% - 40px); /* 2 items per row on medium screens */
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -433,10 +507,17 @@
       padding-left: 35px;
     }
 
-    .footer-title {
+    .footer-info img {
       align-self: center;
-      text-align: center;
       padding-left: 20px;
+    }
+
+    .menu-card-item {
+      flex-basis: 100%; /* 1 item per row */
+    }
+
+    .category p {
+      flex: 1 1 100%; /* 1 item per row on small screens */
     }
   }
 }

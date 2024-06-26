@@ -22,7 +22,7 @@ const Header: React.FC = () => {
           <img src={logo.url} alt="Logo" />
         </Link>
 
-        <Heading className="heading" text={website_title} tagName="h6" />
+        {/* <Heading className="heading" text={website_title} tagName="h6" /> */}
       </div>
       <nav className={`nav ${isOpen ? "active" : ""}`}>
         {navigation_links?.link.map((link: TLink, index: number) => (
