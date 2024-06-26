@@ -1,7 +1,6 @@
 import React from "react";
-import { TDishes } from "../../types";
 // COMMENT: Uncomment below import statement
-// import { TDishes } from "../../types";
+import { TDishes } from "../../types";
 
 // COMMENT: Replace any[] with TDishes[]
 const MenuCard: React.FC<{ data: any[] }> = ({ data }) => {

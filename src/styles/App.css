@@ -16,6 +16,12 @@
     align-items: center;
   }
 
+  .logo-menu img {
+    width: auto;
+    height: auto;
+    padding: 50px 0px;
+  }
+
   .heading {
     color: #3822aa;
     font-family: "Cormorant Garamond";
@@ -23,10 +29,6 @@
     font-style: italic;
     font-weight: 700;
     line-height: normal;
-  }
-
-  .logo-menu img {
-    margin-right: 10px;
   }
 
   .nav {
@@ -202,6 +204,10 @@
     text-underline-offset: 4px;
   }
 
+  .category p:hover {
+    color: #3822aa;
+  }
+
   .footer {
     display: flex;
     padding: 45px 80px 40px 45px;
@@ -332,7 +338,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Adjust gap as needed */
+    gap: 40px; /* Adjust gap as needed */
     width: 100%;
   }
 
@@ -340,10 +346,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: calc(33.33% - 20px); /* Allows three cards per row */
-    max-width: 400px; /* Prevents card from growing too large */
-    min-width: 280px; /* Ensures cards don’t become too small */
-    flex-grow: 1; /* Makes sure cards take up available space */
+    flex-basis: calc(33.33% - 20px);
+    max-width: 400px;
+    min-width: 280px;
+    flex-grow: 1;
+    border-radius: 15px;
+    overflow: hidden;
   }
 
   .item-content {
@@ -355,6 +363,7 @@
     gap: 20px;
     border: 1px solid rgba(38, 29, 50, 0.2);
     background: #fbf8f4;
+    border-radius: 0 0 15px 15px;
   }
 
   .item-content-text {
@@ -423,10 +432,10 @@
 
   @media (max-width: 1200px) {
     .menu-card-item {
-      flex-basis: calc(50% - 20px); /* 2 items per row */
+      flex-basis: calc(50% - 20px);
     }
     .category p {
-      flex: 1 1 calc(50% - 40px); /* 2 items per row on medium screens */
+      flex: 1 1 calc(50% - 40px);
     }
   }
 
@@ -509,7 +518,8 @@
 
     .footer-info img {
       align-self: center;
-      padding-left: 20px;
+      padding-left: 30px;
+      width: 250px;
     }
 
     .menu-card-item {
@@ -518,6 +528,10 @@
 
     .category p {
       flex: 1 1 100%; /* 1 item per row on small screens */
+    }
+
+    .logo-menu img {
+      width: 160px; /* Adjust width for tablets */
     }
   }
 }
