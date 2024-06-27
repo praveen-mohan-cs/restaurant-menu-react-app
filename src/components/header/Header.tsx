@@ -17,9 +17,12 @@ const Header: React.FC = () => {
 
   return (
     <div className={`header ${isOpen ? "open" : ""}`}>
-      <div className="logo">
-        <img src={logo.url} alt="Logo" />
-        <Heading text={website_title} tagName="h2" />
+      <div className="logo-menu">
+        <Link to="/">
+          <img src={logo.url} alt="Logo" />
+        </Link>
+
+        {/* <Heading className="heading" text={website_title} tagName="h6" /> */}
       </div>
       <nav className={`nav ${isOpen ? "active" : ""}`}>
         {navigation_links?.link.map((link: TLink, index: number) => (
