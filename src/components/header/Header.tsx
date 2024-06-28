@@ -19,7 +19,14 @@ const Header: React.FC = () => {
     <div className={`header ${isOpen ? "open" : ""}`}>
       <div className="logo-menu">
         <Link to="/">
-          <img src={logo.url} alt="Logo" />
+          {/* TODO: Undo the below change */}
+          {/* <img src={logo?.url} alt="Logo" /> */}
+          <img
+            src={
+              "https://images.contentstack.io/v3/assets/bltb07d61d76cca54b3/blt4fcb7a4d8b0d4f81/667d25ddee05f336b82fea3b/Logo_with_name_to_the_left.png"
+            }
+            alt="Logo"
+          />
         </Link>
 
         {/* <Heading className="heading" text={website_title} tagName="h6" /> */}

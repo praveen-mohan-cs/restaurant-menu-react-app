@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import MenuCard from "./MenuCard";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
@@ -21,8 +21,12 @@ const Menu: React.FC = () => {
     fetchMenuPageData(dispatch, setLoading);
   }, [dispatch]);
 
-  const categories = menuPageData?.map((course: TMenu) => course.course_name);
-  const dishes = menuPageData?.map((course: TMenu) => course.dishes);
+  const memoizedMenuPageData = useMemo(() => menuPageData, [menuPageData]);
+
+  const categories = memoizedMenuPageData?.map(
+    (course: TMenu) => course.course_name
+  );
+  const dishes = memoizedMenuPageData?.map((course: TMenu) => course.dishes);
   const flatDishes: TDishes[] = dishes
     ?.flat()
     .filter(
@@ -31,15 +35,15 @@ const Menu: React.FC = () => {
 
   return (
     <div className="menu-page">
-      {loading ? (
-        <LoadingSkeleton />
-      ) : (
-        <>
-          <div className="menu-heading">
-            <span className="line1">Discover</span>
-            <span className="line2">Our Dining Menu</span>
-          </div>
-          <div className="categories">
+      <div className="menu-heading">
+        <span className="line1">Discover</span>
+        <span className="line2">Our Dining Menu</span>
+      </div>
+      <div className="categories">
+        {loading ? (
+          <LoadingSkeleton />
+        ) : (
+          <>
             <div className="category">
               <p
                 key="cat-0"
@@ -58,15 +62,18 @@ const Menu: React.FC = () => {
                 </p>
               ))}
             </div>
-          </div>
-          <div className="card-section">
-            {activeIndex === 0 ? (
-              <MenuCard data={flatDishes} />
-            ) : (
-              <MenuCard data={dishes[activeIndex - 1]} />
-            )}
-          </div>
-        </>
+          </>
+        )}
+      </div>
+
+      {!loading && (
+        <div className="card-section">
+          {activeIndex === 0 ? (
+            <MenuCard data={flatDishes} />
+          ) : (
+            <MenuCard data={dishes[activeIndex - 1]} />
+          )}
+        </div>
       )}
     </div>
   );

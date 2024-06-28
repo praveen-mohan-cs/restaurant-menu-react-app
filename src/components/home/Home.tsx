@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { Heading, Button } from "@contentstack/venus-components";
@@ -10,7 +10,9 @@ const Home: React.FC = () => {
   );
   const navigate = useNavigate();
 
-  const { home } = homePageData.sections[0];
+  const memoizedHomePageData = useMemo(() => homePageData, [homePageData]);
+
+  const { home } = memoizedHomePageData.sections[0];
 
   return (
     <div className="home-page">
