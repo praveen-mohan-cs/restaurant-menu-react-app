@@ -1,6 +1,6 @@
 import React from "react";
 // COMMENT: Uncomment below import statement
-import { TDishes } from "../../types";
+// import { TDishes } from "../../types";
 
 // COMMENT: Replace any[] with TDishes[]
 const MenuCard: React.FC<{ data: any[] }> = ({ data }) => {
@@ -8,7 +8,7 @@ const MenuCard: React.FC<{ data: any[] }> = ({ data }) => {
     <div className="menu-card">
       {data ? (
         // COMMENT: Replace any with TDishes
-        data.map((menuItem: TDishes) => (
+        data.map((menuItem: any) => (
           <div className="menu-card-item">
             <div
               style={{

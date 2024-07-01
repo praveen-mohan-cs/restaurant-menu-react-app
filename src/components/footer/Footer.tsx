@@ -26,14 +26,7 @@ const Footer: React.FC = () => {
         )}
         {information_section && (
           <div className="footer-info">
-            {/* TODO: Undo the below change */}
-            {/* <img src={information_section.logo?.url} alt="Footer" /> */}
-            <img
-              src={
-                "https://images.contentstack.io/v3/assets/bltb07d61d76cca54b3/blt54bde1ba989a25c8/667d280d45c6f77a4c35ceeb/Logo_with_name_to_the_left_1.png"
-              }
-              alt="Footer"
-            />
+            <img src={information_section.logo?.url} alt="Footer" />
 
             <p>{information_section?.descrption}</p>
             <Heading text="Hours" tagName="h3" />
