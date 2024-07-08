@@ -69,16 +69,11 @@
 
   .hero-section {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
     width: 100%;
   }
 
   .hero-banner {
-    flex: 1;
-    max-width: 50%;
+    width: 50%;
   }
 
   .hero-banner img {
@@ -91,17 +86,20 @@
 
   .hero-content {
     flex: 1;
-    max-width: 50%;
-    padding-left: 35px;
+    width: 50%;
+    margin: 96px;
   }
 
   .hero-content h1 {
     color: #241d32;
     font-family: "Cormorant Garamond";
-    font-size: 100px;
-    font-style: italic;
-    font-weight: 100;
-    line-height: 100px;
+    font-size: 112px;
+    font-weight: 200;
+    line-height: 112px;
+    .italic {
+      font-style: italic;
+      font-weight: 100;
+    }
   }
 
   .hero-content p {
@@ -111,18 +109,7 @@
     font-style: normal;
     font-weight: 300;
     line-height: 30px;
-    padding: 15px 0;
-  }
-
-  .hero-content a {
-    color: #241d32;
-    text-decoration: none;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 150% */
-    width: 10px;
+    margin-top: 5%;
   }
 
   .cta-button {
@@ -134,10 +121,11 @@
     justify-content: center;
     text-align: center;
     font-family: "Cormorant Garamond";
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 32px;
+    font-weight: 700;
+    width: 40%;
+    margin-top: 10%;
   }
 
   .cta-button:hover {
@@ -438,12 +426,29 @@
     margin-top: 50px;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     .menu-card-item {
       flex-basis: calc(50% - 20px);
     }
     .category p {
       flex: 1 1 calc(50% - 40px);
+    }
+    .hero-content {
+      margin: 96px;
+    }
+
+    .hero-content h1 {
+      font-size: 96px;
+      line-height: 96px;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .cta-button {
+      font-size: 18px;
     }
   }
 
@@ -469,26 +474,32 @@
     }
 
     .hero-section {
+      display: flex;
+      width: 100%;
       flex-direction: column;
       align-items: flex-start;
     }
 
     .hero-banner,
     .hero-content {
-      max-width: 100%;
+      width: 100%;
       align-items: center;
       text-align: center;
       justify-content: center;
-      padding-left: 0;
+    }
+
+    .hero-content {
+      margin: 32px 0px 0px 0px;
     }
 
     .hero-banner img {
       height: 45vh;
+      object-fit: cover;
     }
 
     .hero-content h1 {
-      font-size: 40px;
-      line-height: 50px;
+      font-size: 32px;
+      line-height: 32px;
       text-align: center;
     }
 
@@ -499,6 +510,8 @@
     }
     .cta-button {
       margin: auto;
+      font-size: 16px;
+      margin-top: 24px;
     }
 
     .footer-content {

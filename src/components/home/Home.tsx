@@ -14,6 +14,22 @@ const Home: React.FC = () => {
 
   const { home } = memoizedHomePageData.sections[0];
 
+  const styleAlternateWords = (text: string) => {
+    return text
+      .split(" ")
+      .map((char, index) =>
+        index % 2 === 1 ? <span className="italic">{char}</span> : char
+      )
+      .reduce(
+        (acc, curr) => (
+          <>
+            {acc} {curr}
+          </>
+        ),
+        <></>
+      );
+  };
+
   return (
     <div className="home-page">
       <div className="hero-section">
@@ -23,7 +39,7 @@ const Home: React.FC = () => {
           </div>
         )}
         <div className="hero-content">
-          <Heading text={home.hero_section?.heading} tagName="h1" />
+          <h1>{styleAlternateWords(home.hero_section?.heading || "")}</h1>
           <p>{home.hero_section?.description}</p>
           <Button
             size="large"
