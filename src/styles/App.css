@@ -1,7 +1,7 @@
 .app {
   .header {
     display: flex;
-    padding: 30px 30px;
+    padding: 32px 32px;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -25,17 +25,17 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 40px;
+    gap: 36px;
   }
 
   .nav a {
     color: #241d32;
     text-decoration: none;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
   }
 
   .nav a.active {
@@ -53,7 +53,7 @@
   }
 
   .menu-toggle .icon-bar {
-    width: 25px;
+    width: 24px;
     height: 3px;
     background-color: black;
     margin: 4px 0;
@@ -62,23 +62,18 @@
   .home-page {
     display: flex;
     flex-direction: column;
-    padding-top: 70px;
+    padding-top: 72px;
     width: 100%;
     background-color: #fbf8f4;
   }
 
   .hero-section {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
     width: 100%;
   }
 
   .hero-banner {
-    flex: 1;
-    max-width: 50%;
+    width: 50%;
   }
 
   .hero-banner img {
@@ -91,53 +86,47 @@
 
   .hero-content {
     flex: 1;
-    max-width: 50%;
-    padding-left: 35px;
+    width: 50%;
+    margin: 64px;
+    align-self: center;
   }
 
   .hero-content h1 {
     color: #241d32;
     font-family: "Cormorant Garamond";
-    font-size: 100px;
-    font-style: italic;
-    font-weight: 100;
-    line-height: 100px;
+    font-size: 144px;
+    font-weight: 500;
+    line-height: 144px;
+    .italic {
+      font-style: italic;
+      font-weight: 100;
+    }
   }
 
   .hero-content p {
     color: #241d32;
     font-family: "Inter";
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 300;
-    line-height: 30px;
-    padding: 15px 0;
-  }
-
-  .hero-content a {
-    color: #241d32;
-    text-decoration: none;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 150% */
-    width: 10px;
+    line-height: 32px;
+    margin-top: 5%;
   }
 
   .cta-button {
     background-color: #3822aa;
     color: #fbf8f4;
-    border-radius: 20px;
+    border-radius: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-family: "Cormorant Garamond";
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 32px;
+    font-weight: 700;
+    width: 40%;
+    margin-top: 10%;
   }
 
   .cta-button:hover {
@@ -147,22 +136,21 @@
   .menu-page {
     background-color: #fbf8f4;
     width: 100%;
-    padding-top: 85px;
+    padding-top: 72px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 48px;
     align-self: stretch;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
   .categories {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust gap as needed */
     width: 100%;
-    padding: 20px; /* Optional: Add some padding around the container */
+    padding: 18px; /* Optional: Add some padding around the container */
     box-sizing: border-box;
   }
 
@@ -170,41 +158,45 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust gap as needed */
+    gap: 18px 0px;
     width: 100%;
   }
 
   .category p {
-    flex: 1 1 calc(33.33% - 40px); /* 3 items per row on large screens */
-    max-width: 200px; /* Prevent the category from growing too large */
-    min-width: 100px; /* Ensures categories don’t become too small */
+    flex: 1 1 calc(33.33% - 40px);
+    max-width: 200px;
+    min-width: 100px;
     flex-grow: 1;
     color: #241d32;
     cursor: pointer;
-    font-family: Inter, sans-serif;
-    font-size: 16px;
+    font-family: Inter;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 24px; /* 150% */
-    text-align: center; /* Optional: Center-align text */
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    opacity: 0.5;
   }
 
   .category p.active {
     color: #3822aa;
     text-decoration: underline;
-    text-underline-offset: 4px;
+    text-underline-offset: 16px;
+    font-weight: 600;
+    opacity: 1;
   }
 
   .category p:hover {
     color: #3822aa;
+    opacity: 0.8;
   }
 
   .footer {
     display: flex;
-    padding: 45px 80px 40px 45px;
+    padding: 48px 80px 36px 48px;
     flex-direction: column;
     align-items: center;
-    gap: 20px 60px;
+    gap: 16px 32px;
     align-self: stretch;
     background: #222;
     color: #fbf8f4;
@@ -229,13 +221,13 @@
   .footer-nav {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
   }
 
   .footer h1 {
     color: #fbf8f4;
     font-family: "Cormorant Garamond";
-    font-size: 26px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: 32px;
@@ -266,14 +258,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 16px;
     color: #fbf8f4;
   }
 
   .footer-info img {
     width: 300px;
     height: 50px;
-    /* padding-bottom: 10px; */
   }
 
   .footer-info p {
@@ -289,7 +280,7 @@
   .footer-info h3 {
     color: #fbf8f4;
     font-family: "Cormorant Garamond";
-    font-size: 26px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: 32px;
@@ -303,17 +294,37 @@
     color: #241d32;
     text-align: center;
 
-    /* Heading 2 */
     font-family: "Cormorant Garamond";
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: 60px; /* 110% */
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 90px;
+    text-align: center;
+    margin: 36px 0 0 0;
   }
 
-  .menu-heading .line1,
+  .menu-heading .line1 {
+    display: block;
+    align-self: stretch;
+  }
+
   .menu-heading .line2 {
     display: block;
+    color: #241d32;
+
+    font-family: "Cormorant Garamond";
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90px;
+
+    .italic {
+      color: #241d32;
+      font-family: "Cormorant Garamond";
+      font-size: 80px;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 90px;
+    }
   }
 
   .card-section {
@@ -321,7 +332,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust gap as needed */
+    gap: 24px;
     width: 100%;
   }
 
@@ -329,7 +340,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px; /* Adjust gap as needed */
+    gap: 36px;
     width: 100%;
   }
 
@@ -341,7 +352,7 @@
     max-width: 400px;
     min-width: 280px;
     flex-grow: 1;
-    border-radius: 15px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.25);
   }
@@ -352,46 +363,46 @@
     align-items: center;
     width: 100%;
     padding: 16px;
-    gap: 20px;
-    /* border: 1px solid rgba(38, 29, 50, 0.2); */
+    gap: 24px;
     background: #fbf8f4;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 16px 16px;
   }
 
   .item-content-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     width: 100%;
   }
 
   .price {
     color: #241d32;
     text-align: right;
-    font-family: Inter, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 20px;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
   }
 
   .item-content-text p {
     color: #715cdd;
     text-align: center;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 28px;
+    font-family: "Cormorant Garamond";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
   }
 
   .description {
     color: #241d32;
     text-align: center;
     font-family: Inter, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
     flex: 1;
+    opacity: 0.7;
   }
 
   .body {
@@ -410,7 +421,7 @@
     min-width: 280px;
     height: 500px;
     flex-grow: 1;
-    border-radius: 15px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.25);
     background-color: transparent;
@@ -433,17 +444,34 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px; /* Adjust gap as needed */
+    gap: 36px;
     width: 100%;
     margin-top: 50px;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     .menu-card-item {
       flex-basis: calc(50% - 20px);
     }
     .category p {
       flex: 1 1 calc(50% - 40px);
+    }
+    .hero-content {
+      margin: 96px;
+    }
+
+    .hero-content h1 {
+      font-size: 96px;
+      line-height: 96px;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .cta-button {
+      font-size: 18px;
     }
   }
 
@@ -452,11 +480,11 @@
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 70px;
+      top: 72px;
       left: 0;
       width: 100%;
       background-color: #fbf8f4;
-      padding: 10px;
+      padding: 16px;
     }
 
     .header .nav.active {
@@ -469,26 +497,32 @@
     }
 
     .hero-section {
+      display: flex;
+      width: 100%;
       flex-direction: column;
       align-items: flex-start;
     }
 
     .hero-banner,
     .hero-content {
-      max-width: 100%;
+      width: 100%;
       align-items: center;
       text-align: center;
       justify-content: center;
-      padding-left: 0;
+    }
+
+    .hero-content {
+      margin: 32px 0px 0px 0px;
     }
 
     .hero-banner img {
       height: 45vh;
+      object-fit: cover;
     }
 
     .hero-content h1 {
-      font-size: 40px;
-      line-height: 50px;
+      font-size: 32px;
+      line-height: 32px;
       text-align: center;
     }
 
@@ -499,40 +533,58 @@
     }
     .cta-button {
       margin: auto;
+      font-size: 16px;
+      margin-top: 24px;
+    }
+
+    .menu-heading,
+    .menu-heading .line2 {
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 80px;
+      .italic {
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 80px;
+      }
     }
 
     .footer-content {
       flex-direction: column;
-      gap: 40px;
+      gap: 36px;
       align-items: center;
       text-align: center;
     }
 
     .footer-link {
-      padding-left: 15px;
+      padding-left: 16px;
     }
 
     .footer-info h3 {
       align-self: center;
       text-align: center;
-      padding-left: 20px;
+      padding-left: 18px;
+    }
+
+    .footer h1 {
+      align-self: center;
     }
 
     .footer-info p {
       align-self: center;
       text-align: center;
-      padding-left: 35px;
+      padding-left: 32px;
     }
 
     .footer-info img {
       align-self: center;
-      padding-left: 30px;
+      padding-left: 32px;
       width: 250px;
     }
 
     .menu-card-item {
       flex-basis: 100%; /* 1 item per row */
-      margin: 20px;
+      margin: 28px;
     }
 
     .category p {

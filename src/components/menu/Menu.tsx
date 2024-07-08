@@ -9,7 +9,7 @@ import { LoadingSkeleton } from "../LoadingSkeleton";
 // import { fetchMenuPageData } from "../../api";
 
 const Menu: React.FC = () => {
-  // COMMENT: Uncomment from line 14 to 80
+  // COMMENT: Uncomment from line 14 to 96
 
   // const dispatch = useDispatch();
   // const [loading, setLoading] = useState(true);
@@ -34,11 +34,27 @@ const Menu: React.FC = () => {
   //     (dish, index, self) => index === self.findIndex((d) => d.uid === dish.uid)
   //   );
 
+  // const styleAlternateWords = (text: string) => {
+  //   return text
+  //     .split(" ")
+  //     .map((char, index) =>
+  //       index % 2 === 1 ? <span className="italic">{char}</span> : char
+  //     )
+  //     .reduce(
+  //       (acc, curr) => (
+  //         <>
+  //           {acc} {curr}
+  //         </>
+  //       ),
+  //       <></>
+  //     );
+  // };
+
   // return (
   //   <div className="menu-page">
   //     <div className="menu-heading">
   //       <span className="line1">Discover</span>
-  //       <span className="line2">Our Dining Menu</span>
+  //       <h1 className="line2">{styleAlternateWords("Our Dining Menu")}</h1>
   //     </div>
   //     <div className="categories">
   //       {loading ? (
