@@ -1,7 +1,9 @@
 {
-  "name": "first-app",
-  "version": "0.1.0",
+  "name": "contentstack-getting-started-react-app",
+  "description": "A starter app for Contentstack and React",
+  "version": "1.0.0",
   "private": true,
+  "author": "Contentstack",
   "dependencies": {
     "@contentstack/venus-components": "^2.2.2",
     "@reduxjs/toolkit": "^2.2.1",
@@ -41,5 +43,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "license": "MIT"
 }

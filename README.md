@@ -9,13 +9,13 @@ This is a React starter app that integrates with Contentstack's Content Delivery
 1. Clone the repository:
 
    ```
-   git clone https://github.com/praveen-mohan-cs/restaurant-menu-react-app.git
+   git clone https://github.com/contentstack/contentstack-getting-started-react-app.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd restaurant-menu-react-app
+   cd contentstack-getting-started-react-app
    ```
 
 3. Install dependencies:
@@ -69,4 +69,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or feedback, feel free to [open an issue](https://github.com/praveen-mohan-cs/restaurant-menu-react-app/issues).
+For questions or feedback, feel free to [open an issue](https://github.com/contentstack/contentstack-getting-started-react-app/issues).

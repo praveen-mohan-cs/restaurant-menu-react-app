@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { Heading, Button } from "@contentstack/venus-components";
+import { Button } from "@contentstack/venus-components";
 import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
